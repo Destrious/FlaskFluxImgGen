@@ -10,9 +10,6 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Set environment variable
-ENV FAL_KEY=19f39052-3d42-4008-b35d-c2aa6d121108:bd6620e3131956251a28aae4faefe700
-
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 

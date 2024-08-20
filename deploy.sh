@@ -15,4 +15,4 @@ docker image tag flask-img-gen destrious/flask-img-gen:latest
 docker push destrious/flask-img-gen:latest
 
 # Run the Docker image
-docker run -it --env-file .env -p 5000:5000 destrious/flask-img-gen
+docker run -it --env-file .env --name flux --network mawookie_network -p 5000:5000 destrious/flask-img-gen
