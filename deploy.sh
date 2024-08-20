@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Remove existing Docker container and images
+docker ps -q --filter ancestor=destrious/flask-img-gen | xargs -r docker stop
 docker container prune -f
 docker image prune -f
 
@@ -14,4 +15,4 @@ docker image tag flask-img-gen destrious/flask-img-gen:latest
 docker push destrious/flask-img-gen:latest
 
 # Run the Docker image
-docker run -it --env-file .env destrious/flask-img-gen
+docker run -it --env-file .env -p 5000:5000 destrious/flask-img-gen
